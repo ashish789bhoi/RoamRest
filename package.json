@@ -1,13 +1,14 @@
 {
   "name": "major_project",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "start": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build:css": "postcss public/stylesheets/tailwind.css -o public/stylesheets/output.css",
     "watch:css": "postcss public/stylesheets/tailwind.css -o public/stylesheets/output.css --watch",
-    "dev": "concurrently \"npm run watch:css\" \"nodemon app.js\""
+    "dev": "concurrently \"npm run watch:css\" \"nodemon app.js\"",
+    "vercel-build": "npm run build:css"
   },
   "keywords": [],
   "author": "ASHISH",
@@ -37,5 +38,8 @@
     "postcss": "^8.4.39",
     "postcss-cli": "^11.0.0",
     "tailwindcss": "^3.4.6"
+  },
+  "engines": {
+    "node": ">=16.x"
   }
 }
