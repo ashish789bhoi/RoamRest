@@ -70,9 +70,15 @@ main().then(()=>{
 
 
 const PORT = 8080;
-app.listen(PORT,()=>{
-    console.log(`Server is istening on port: ${PORT}`);
-})
+if (process.env.VERCEL_ENV) {
+    // Export the app for Vercel
+    module.exports = app;
+  } else {
+    // Start the server locally
+    app.listen(PORT, () => {
+      console.log(`Server is listening on port: ${PORT}`);
+    });
+  }
 
 main().catch(err => console.log(err));
 
