@@ -84,7 +84,7 @@ main().catch(err => console.log(err));
 
 //Root route
 app.get("/",(req,res)=>{
-    res.send("Hi! I,m root");
+    res.redirect("/listings");
 })
 
 //Passing listed matching routes to their respective file
