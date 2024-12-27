@@ -22,7 +22,7 @@ const LocalStrategy = require("passport-local");
 const User = require("./models/user.js");       
 
 app.set("view engine","ejs");   //Setting view engine
-app.set("views",path.join(__dirname,"views"));   //Setting views path
+app.set("views",path.join(__dirname,"Views"));   //Setting views path
 app.engine('ejs', ejsMate);   // use ejs-locals for all ejs templates:
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
